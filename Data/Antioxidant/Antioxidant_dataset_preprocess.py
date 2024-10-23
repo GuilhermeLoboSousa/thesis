@@ -25,16 +25,6 @@ import requests
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Download the data
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC # Save data
-
-# COMMAND ----------
-
-# MAGIC %md
 # MAGIC # Load data
 
 # COMMAND ----------
@@ -166,52 +156,6 @@ plt.show()
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-# Exemplo de modelos
-models = ['DP-AOP', 'AodPred', 'AOP-SVM', 'PredAOP', 'Propythia','OmniA']
-
-# Exemplo de métricas (substitua pelos seus valores reais)
-metrics = ['Accuracy', 'Recall', 'MCC', 'F1 Score']
-values = {
-    'Accuracy': [91.07,74.79,94.2,93.18,91.10,69.0],
-    'Recall': [85.8,74.48, 98.5, 96.77, 96.99, 63.2],
-    'MCC': [82.6, 36.8, 74.1, 71.2, 59.61, 68.50],
-    'F1 Score': [91.5, 45.2, 76.7, 74.9, 63.63, 71.6],
-}
-
-# Definir cores para cada modelo
-colors = ['blue', 'green', 'red', 'orange', 'purple', 'grey']
-
-# Tamanho da figura
-plt.figure(figsize=(10, 6))
-
-# Número de barras por grupo (5 modelos)
-bar_width = 0.15
-
-# Posições das barras no eixo x
-index = np.arange(len(metrics)) * 1.2  # Espaçar mais as métricas no eixo X
-
-# Criar barras para cada modelo
-for i, model in enumerate(models):
-    plt.bar(index + i * bar_width, [values[metric][i] for metric in metrics], 
-            bar_width, label=model, color=colors[i])
-
-# Configurações do gráfico
-plt.xlabel('Metrics',fontsize=14)
-plt.ylabel('Scores (%)',fontsize=14)
-plt.title('Performance of Models on Antioxidant Dataset',fontsize=14)
-plt.xticks(index + bar_width * 2, metrics,fontsize=14)
-plt.legend(title='Models', bbox_to_anchor=(1.05, 1), loc='upper left',fontsize=13)
-
-# Mostrar o gráfico
-plt.tight_layout()
-plt.show()
-
-
-# COMMAND ----------
-
-import matplotlib.pyplot as plt
-import numpy as np
 from matplotlib import cm
 
 # Exemplo de modelos
@@ -264,8 +208,4 @@ plt.savefig('antioxidant_global_sem_dpaop.png', dpi=300)
 # Ajustar layout e mostrar gráfico
 plt.tight_layout()
 plt.show()
-
-
-# COMMAND ----------
-
 
